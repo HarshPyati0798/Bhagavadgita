@@ -43,7 +43,7 @@ class SearchScreen extends Component{
             'content-type': 'application/x-www-form-urlencoded'
         };
 
-        var dataString = 'client_id=JTxnJwg7pyyQd4y7WsVomdSbvUck6Atwhlh4BeFg&client_secret=zgaWJtBMcyow9pxaGMBOxTGMNzDzeXYVIbeI3UtyLovaoOequO&grant_type=client_credentials&scope=verse%20chapter';
+        var dataString = 'client_id=YOUR_API_ID&client_secret=YOUR_API_SECRET&grant_type=client_credentials&scope=verse%20chapter';
 
         axios.post('https://bhagavadgita.io/auth/oauth/token', dataString, {headers:headers})
         .then((response) => {
