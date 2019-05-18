@@ -1,24 +1,22 @@
 import React, { Component } from 'react';
-import { View,StyleSheet } from 'react-native';
-import {Text,PaperProvider} from 'react-native-paper';
+import { View,StyleSheet,Text} from 'react-native';
+import {PaperProvider} from 'react-native-paper';
 
 class Info extends Component{
     setData = () => {
-        if(!this.props.info){
-            return <Text>Info</Text>
-        }
-        const mapped = this.props.info.forEach(item => {
+        return this.props.verses.map((item,index) => {
             return(
-                <View>
-                    <Text>item.text</Text>
-                    <Text>item.meaning</Text>
+                <View key = {index} style = {styles.container}>
+                    <Text style={styles.header}>Chapter {item.chapter} Verse {item.verse}</Text>
+                    <View>
+                        <Text style = {styles.text}>{item.text}</Text>
+                        <Text style = {styles.text}>{item.transliteration}</Text>
+                        <Text style = {styles.text}>{item.meaning}</Text>
+                    </View>
                 </View>
-            )
+            );
         });
-
-        console.log(mapped);
-
-        return mapped;
+        // return <Text>Not null</Text>
     }
     render(){
         return(
@@ -28,5 +26,27 @@ class Info extends Component{
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        borderWidth: 5,
+        borderColor:'orange',
+        borderRadius: 5,
+        margin: 10
+    },
+    text: {
+        color: 'black',
+        fontSize: 16,
+        marginBottom: 10,
+        fontFamily:'Raleway-Regular'
+    },
+    header: {
+        color: 'orange',
+        textAlign: 'center',
+        fontSize: 18,
+        marginBottom: 5,
+        fontFamily: 'Raleway-Regular'
+    }
+})
 
 export default Info;

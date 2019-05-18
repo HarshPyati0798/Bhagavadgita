@@ -14,13 +14,17 @@ const theme = {
     accent: 'white',
   },
   fonts: {
-    regular: 'Raleway-Regular'
+    regular: 'Raleway-Regular',
+    bold: 'Raleway-Bold'
   }
 };
 class SearchScreen extends Component{
     static navigationOptions = {
         title: 'Search for Verses',
-        headerTintColor: 'orange'
+        headerTintColor: 'orange',
+        headerTitleStyle: {
+            fontFamily: 'Raleway-Bold'
+        }
     }
     constructor(props){
         super(props);

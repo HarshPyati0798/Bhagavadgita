@@ -43,13 +43,17 @@ const Details = (props) => {
 }
 const styles = StyleSheet.create({
     heading: {
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         color: 'white',
-        textAlign:'center'
+        fontSize: 16,
+        textAlign:'center',
+        fontFamily: 'Raleway-Regular'
     },
     textInput: {
         color: 'white',
-        textAlign:'center'
+        fontSize:14,
+        textAlign:'center',
+        fontFamily: 'Raleway-Regular'
     },
     buttonContainer: {
         width: '100%',
